@@ -1,0 +1,73 @@
+@model Post
+
+@Html.Partial("_Header")
+<div class="row">
+    <div class="col-sm-offset-1 col-md-8">
+        <form asp-action="Edit">
+            <div class="form-horizontal">
+
+                <h4>New Post</h4>
+                <hr />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShortDescription" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <textarea asp-for="ShortDescription" class="form-control"></textarea>
+                        <span asp-validation-for="ShortDescription" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="ImageUrl" class="form-control" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <textarea asp-for="Description" class="form-control"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UrlSlug" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="UrlSlug" class="form-control" />
+                        <span asp-validation-for="UrlSlug" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            <input asp-for="Published" />
+                            <label asp-for="Published"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PostedOn" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="PostedOn" id="formDate" class="form-control" />
+                        <span asp-validation-for="PostedOn" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

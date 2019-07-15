@@ -1,0 +1,32 @@
+@model ListViewModel
+
+<div class="container">
+    <div class="row">
+        @Html.Partial("_UserProfileSidebar")
+
+        <!--col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1-->
+        <div class="col-md-8">
+
+            @if (Model.Posts.Count > 0)
+            {
+                foreach (var post in Model.Posts)
+                {
+                    @Html.Partial("_PostTemplate", post)
+                }
+            }
+            else
+            {
+                <p>No posts found</p>
+            }
+
+            <!-- Pager -->
+            @*<ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>*@
+
+        </div>
+    </div>
+</div>
+

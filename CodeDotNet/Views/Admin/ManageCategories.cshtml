@@ -1,0 +1,13 @@
+@model IEnumerable<Category>
+
+@Html.Partial("_Header")
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminCategoriesGrid", Model)
+        </div>
+    </div>
+
+</section>

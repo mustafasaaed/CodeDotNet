@@ -1,0 +1,28 @@
+@using System.Globalization
+
+@model Post
+
+
+<div class="post-preview">
+    <a href="@Url.Action("Post", "Blog",new
+                        {
+                            year = Model.PostedOn.Year,
+                            month = Model.PostedOn.Month,
+                            title = Model.UrlSlug
+                        })">
+        <h2 class="post-title">
+            @Html.Raw(Model.Title)
+        </h2>
+        <h3 class="post-subtitle">
+            @Html.Raw(Model.ShortDescription)
+        </h3>
+    </a>
+    <p class="post-meta">
+        Posted by <a href="#">Mustafa Saeed</a>
+        @{
+            string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.PostedOn.Month);
+        }
+        @String.Format($"On {monthName} {Model.PostedOn.Day}, { Model.PostedOn.Year}")
+    </p>
+</div>
+<hr />

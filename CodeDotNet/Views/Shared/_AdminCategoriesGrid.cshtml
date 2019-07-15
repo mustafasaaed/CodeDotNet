@@ -1,0 +1,36 @@
+@model IEnumerable<Category>
+
+
+<div class="col-md-6">
+    <h1 class="page-header"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h1>
+    <h3>Categories</h3>
+
+
+    <a asp-controller="Admin" asp-action="AddCategory">Add Category</a>
+
+
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td><a asp-controller="Admin" asp-action="EditPost" asp-route-category="@category">Edit</a></td>
+                <td>
+                    <a href="@Url.Action("Post", "Blog",new
+                        {
+                            year =  @category.PostedOn.Year,
+                            month = @category.PostedOn.Month,
+                            title = @category.UrlSlug
+                        })">@category.Name</a>
+                    </td>
+
+                    <td>@category.Name</td>
+                </tr>
+        }
+    </table>
+    <hr>
+</div>

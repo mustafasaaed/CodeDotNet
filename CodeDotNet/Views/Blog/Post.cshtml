@@ -1,0 +1,26 @@
+@model Post
+
+
+<header class="intro-header" style="background-image: url('@Model.ImageUrl')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1 style="color: #0085A1">@Html.Raw(Model.Title)</h1> 
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+                @Html.Raw(Model.Description)
+            </div>
+        </div>
+    </div>
+</article>

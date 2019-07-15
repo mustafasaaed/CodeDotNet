@@ -1,0 +1,12 @@
+@model IEnumerable<Post>
+
+@Html.Partial("_Header")
+
+<section>
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminPostsGrid", Model)
+        </div>
+    </div>
+
+</section>
